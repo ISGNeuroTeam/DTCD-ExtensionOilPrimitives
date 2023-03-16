@@ -1,3 +1,9 @@
+## [unreleased]
+### Added
+- OilVrb
+- update privitives
+- hidden unused primitives
+
 ## [0.1.0] - 2023-02-08
 
 ### Added
@@ -18,7 +24,6 @@
   - OilJunctionPointWhatif
   - OilJunctionPPD
   - OilKNS
-  - OilPad
   - OilPipe
   - OilPipeGas
   - OilPipePPD

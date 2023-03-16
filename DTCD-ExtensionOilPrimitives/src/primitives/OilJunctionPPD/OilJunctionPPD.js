@@ -7,7 +7,7 @@ export default class OilJunctionPPD {
       icon,
       title: 'Соединение ppd',
       name: 'oil_junction_ppd',
-      groups: ['Нефтедобыча'],
+      groups: ['ППД'],
     };
   }
 
@@ -26,18 +26,22 @@ export default class OilJunctionPPD {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(),
+      object_type: createProp(`"junctionpoint"`),
       Name: createProp(),
+      res_P: createProp(),
+      res_T: createProp(),
       node_name: createProp(),
       node_id: createProp(),
       X: createProp(),
       Y: createProp(),
       Kind: createProp(),
       Value: createProp(),
+      altitude: createProp(),
+      P: createProp(),
       T: createProp(),
       IsSource: createProp(),
-      VolumeWater: createProp(),
       IsOutlet: createProp(),
+      _pp_tag: createProp(),
     };
 
     const initPorts = [

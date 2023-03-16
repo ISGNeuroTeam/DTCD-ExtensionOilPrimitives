@@ -26,22 +26,25 @@ export default class OilPad {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(),
-      P: createProp(),
-      T: createProp(),
-      Q_m3_day: createProp(),
-      otl_q_m3: createProp(),
-      query_res: createProp(),
+      object_type: createProp(`"pad"`),
       Name: createProp(),
+      res_P: createProp(),
+      res_T: createProp(),
+      VolumeWater: createProp(),
       node_name: createProp(),
       node_id: createProp(),
       X: createProp(),
       Y: createProp(),
       Kind: createProp(),
       Value: createProp(),
-      IsOutlet: createProp(),
+      P: createProp(),
+      T: createProp(),
       IsSource: createProp(),
-      VolumeWater: createProp(),
+      IsOutlet: createProp(),
+      _pp_tag: createProp(),
+      // Q_m3_day: createProp(),
+      // otl_q_m3: createProp(),
+      // query_res: createProp(),
     };
 
     const initPorts = [
@@ -53,14 +56,14 @@ export default class OilPad {
           status: createProp(),
         },
       },
-      {
-        primitiveName: 'outPortIndication',
-        type: 'OUT',
-        portPosition: { x: 0.75, y: 1 },
-        properties: {
-          status: createProp(),
-        },
-      },
+      // {
+      //   primitiveName: 'outPortIndication',
+      //   type: 'OUT',
+      //   portPosition: { x: 0.75, y: 1 },
+      //   properties: {
+      //     status: createProp(),
+      //   },
+      // },
       {
         primitiveName: 'inPort1',
         type: 'IN',

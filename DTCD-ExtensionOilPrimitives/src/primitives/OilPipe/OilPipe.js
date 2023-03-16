@@ -26,8 +26,10 @@ export default class OilPipe {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(),
+      object_type: createProp(`"pipe"`),
       Name: createProp(),
+      res_mass_flow_kg_sec: createProp(),
+      res_velocity_m_sec: createProp(),
       L: createProp(),
       d: createProp(),
       s: createProp(),
@@ -36,6 +38,7 @@ export default class OilPipe {
       intD: createProp(),
       node_id_start: createProp(),
       node_id_end: createProp(),
+      _pp_tag: createProp(),
     };
 
     const initPorts = [
