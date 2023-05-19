@@ -1,3 +1,14 @@
+## [0.2.0] - 2023-05-19
+
+### Added
+
+- New OilVrb primitive
+
+### Changed
+
+- Some primitives props
+- Primitives are divided into two groups (`'Нефтедобыча'`, `'ППД'`)
+
 ## [0.1.0] - 2023-02-08
 
 ### Added
