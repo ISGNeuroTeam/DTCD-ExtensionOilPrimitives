@@ -6,6 +6,7 @@ import OilBlock from './OilBlock/OilBlock';
 import OilWell from './OilWell/OilWell';
 import OilWellVodazabornaya from './OilWellVodazabornaya/OilWellVodazabornaya';
 import OilWellPPD from './OilWellPPD/OilWellPPD';
+import OilVrb from './OilVrb/OilVrb';
 import OilJunctionPointRaw from './OilJunctionPointRaw/OilJunctionPointRaw';
 import OilJunctionPointGas from './OilJunctionPointGas/OilJunctionPointGas';
 import OilJunctionPoint from './OilJunctionPoint/OilJunctionPoint';
@@ -24,28 +25,29 @@ import OilEdgeWater from './OilEdgeWater/OilEdgeWater';
 import OilEdgeWhatif from './OilEdgeWhatif/OilEdgeWhatif';
 
 export default [
-  OilGZU,
+  // OilGZU,
   OilDNS,
   OilKNS,
   OilPad,
-  OilBlock,
+  OilVrb,
+  // OilBlock,
   OilWell,
-  OilWellVodazabornaya,
   OilWellPPD,
-  OilJunctionPointRaw,
-  OilJunctionPointGas,
+  // OilWellVodazabornaya,
+  // OilJunctionPointRaw,
+  // OilJunctionPointGas,
   OilJunctionPoint,
   OilJunctionPPD,
-  OilJunctionPointWhatif,
-  OilPipeRaw,
-  OilPipeGas,
+  // OilJunctionPointWhatif,
+  // OilPipeRaw,
+  // OilPipeGas,
   OilPipe,
   OilPipePPD,
-  OilPipeWhatif,
-  OilEdgeFluid,
-  OilEdgeGas,
-  OilEdgeOil,
-  OilEdgeReagent,
-  OilEdgeWater,
-  OilEdgeWhatif,
+  // OilPipeWhatif,
+  // OilEdgeFluid,
+  // OilEdgeGas,
+  // OilEdgeOil,
+  // OilEdgeReagent,
+  // OilEdgeWater,
+  // OilEdgeWhatif,
 ];

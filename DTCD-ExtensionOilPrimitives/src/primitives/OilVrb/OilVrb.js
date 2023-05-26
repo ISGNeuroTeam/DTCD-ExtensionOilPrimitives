@@ -1,12 +1,12 @@
 import icon from './icon.svg';
 import createProp from '../../utils/createProp';
 
-export default class OilKNS {
+export default class OilVrb {
   static getPrimitiveInfo() {
     return {
       icon,
-      title: 'КНС',
-      name: 'oil_kns',
+      title: 'Водораспределительный блок',
+      name: 'oil_vrb',
       groups: ['ППД'],
     };
   }
@@ -26,30 +26,22 @@ export default class OilKNS {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(`"kns"`),
+      object_type: createProp(`"pad"`),
       Name: createProp(),
       res_P: createProp(),
       res_T: createProp(),
-      res_Q_m3_day: createProp(),
-      VolumeWater: createProp(),
       node_name: createProp(),
       node_id: createProp(),
       X: createProp(),
       Y: createProp(),
-      Kind: createProp(`"P"`),
-      Value: createProp("117"),
-      P: createProp("100"),
+      Kind: createProp(),
+      Value: createProp(),
+      altitude: createProp(),
+      P: createProp(),
       T: createProp(),
-      Q_m3_day: createProp(),
-      income_separated_water_flow_m3_day: createProp(),
-      additional_income_water_flow_m3_day: createProp("0"),
-      total_value_kg_sec: createProp(),
-      _check: createProp(),
-      Pumps_Outlet_Pressure_atm: createProp("117"),
       IsSource: createProp(),
-      IsOutlet: createProp("true"),
+      IsOutlet: createProp(),
       _pp_tag: createProp(),
-
     };
 
     const initPorts = [

@@ -7,7 +7,7 @@ export default class OilWellPPD {
       icon,
       title: 'Скважина ППД',
       name: 'oil_well_ppd',
-      groups: ['Нефтедобыча'],
+      groups: ['ППД'],
     };
   }
 
@@ -26,28 +26,28 @@ export default class OilWellPPD {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(),
-      T: createProp(),
-      P: createProp(),
-      Q_m3_day: createProp(),
-      query_res: createProp(),
-      Name: createProp(),
+      object_type: createProp(`"injection_well"`),
+      res_P: createProp(),
+      res_T: createProp(),
+      res_Q_m3_day: createProp(),
+      Q: createProp(),
+      choke_diam: createProp(),
+      padNum: createProp(),
+      wellNum: createProp(),
+      altitude: createProp(),
+      zakachka: createProp(),
       node_name: createProp(),
       node_id: createProp(),
       X: createProp(),
       Y: createProp(),
-      Kind: createProp(),
-      Value: createProp(),
+      Kind: createProp(`"Q"`),
+      Value: createProp("this.zakachka * 1000 / 86400"),
+      P: createProp(),
+      T: createProp(),
+      Q_m3_day: createProp(),
       IsSource: createProp(),
-      VolumeWater: createProp(),
-      perforation: createProp(),
-      pumpDepth: createProp(),
-      model: createProp(),
-      frequency: createProp(),
-      productivity: createProp(),
-      predict_mode: createProp(),
-      shtr_debit: createProp(),
-      K_pump: createProp(),
+      IsOutlet: createProp(),
+      _pp_tag: createProp(),
     };
 
     const initPorts = [

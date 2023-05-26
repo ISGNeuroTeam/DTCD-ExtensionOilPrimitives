@@ -26,25 +26,45 @@ export default class OilJunctionPoint {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(),
+      object_type: createProp(`"junctionpoint"`),
       Name: createProp(),
+      res_P: createProp(),
+      res_T: createProp(),
+      VolumeWater: createProp(),
       node_name: createProp(),
       node_id: createProp(),
       X: createProp(),
       Y: createProp(),
       Kind: createProp(),
       Value: createProp(),
+      P: createProp(),
       T: createProp(),
       IsSource: createProp(),
-      VolumeWater: createProp(),
       IsOutlet: createProp(),
+      _pp_tag: createProp(),
     };
 
     const initPorts = [
       {
-        primitiveName: 'inoutPort',
-        type: ['IN', 'OUT'],
-        portPosition: { x: 0.5, y: 0.5 },
+        primitiveName: 'outPort1',
+        type: 'OUT',
+        portPosition: { x: 0.5, y: 1 },
+        properties: {
+          status: createProp(),
+        },
+      },
+      // {
+      //   primitiveName: 'outPortIndication',
+      //   type: 'OUT',
+      //   portPosition: { x: 0.75, y: 1 },
+      //   properties: {
+      //     status: createProp(),
+      //   },
+      // },
+      {
+        primitiveName: 'inPort1',
+        type: 'IN',
+        portPosition: { x: 0.5, y: 0 },
         properties: {
           status: createProp(),
         },
