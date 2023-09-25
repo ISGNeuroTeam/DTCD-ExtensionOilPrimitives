@@ -33,8 +33,6 @@ export default class OilPad {
       VolumeWater: createProp(),
       node_name: createProp(),
       node_id: createProp(),
-      X: createProp(),
-      Y: createProp(),
       Kind: createProp(),
       Value: createProp(),
       P: createProp(),

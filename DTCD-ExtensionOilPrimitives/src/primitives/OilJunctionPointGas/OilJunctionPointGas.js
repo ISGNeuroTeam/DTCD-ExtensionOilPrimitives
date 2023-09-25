@@ -30,8 +30,6 @@ export default class OilJunctionPointGas {
       Name: createProp(),
       node_name: createProp(),
       node_id: createProp(),
-      X: createProp(),
-      Y: createProp(),
       Kind: createProp(),
       Value: createProp(),
       T: createProp(),

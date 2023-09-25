@@ -30,8 +30,6 @@ export default class OilGZU {
       Name: createProp(),
       node_name: createProp(),
       node_id: createProp(),
-      X: createProp(),
-      Y: createProp(),
       Kind: createProp(),
       Value: createProp(),
       IsOutlet: createProp(),

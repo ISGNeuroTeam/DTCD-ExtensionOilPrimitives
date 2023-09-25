@@ -34,8 +34,6 @@ export default class OilDNS {
       VolumeWater: createProp(),
       node_name: createProp(),
       node_id: createProp(),
-      X: createProp(),
-      Y: createProp(),
       Kind: createProp(`"P"`),
       Value: createProp("7"),
       P: createProp("100"),

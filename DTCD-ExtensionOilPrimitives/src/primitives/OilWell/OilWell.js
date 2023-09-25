@@ -44,8 +44,6 @@ export default class OilWell {
       frequency: createProp(),
       node_name: createProp(),
       node_id: createProp(),
-      X: createProp(),
-      Y: createProp(),
       Kind: createProp(`"Q"`),
       Value: createProp(`this.LiquidDebit * this.LiquidDensity / 86400`),
       T: createProp(),

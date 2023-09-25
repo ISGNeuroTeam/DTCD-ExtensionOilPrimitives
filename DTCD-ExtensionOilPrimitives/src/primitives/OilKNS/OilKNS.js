@@ -34,8 +34,6 @@ export default class OilKNS {
       VolumeWater: createProp(),
       node_name: createProp(),
       node_id: createProp(),
-      X: createProp(),
-      Y: createProp(),
       Kind: createProp(`"P"`),
       Value: createProp("117"),
       P: createProp("100"),

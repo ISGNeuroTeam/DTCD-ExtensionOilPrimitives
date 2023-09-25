@@ -38,8 +38,6 @@ export default class OilWellPPD {
       zakachka: createProp(),
       node_name: createProp(),
       node_id: createProp(),
-      X: createProp(),
-      Y: createProp(),
       Kind: createProp(`"Q"`),
       Value: createProp("this.zakachka * 1000 / 86400"),
       P: createProp(),
