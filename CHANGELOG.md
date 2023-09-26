@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [UNRELEASED]
 
+### Added
+
+- some new props to OilWell primitive
+
 ### Removed
 
 - topographic props `X` and `Y` from some primitives

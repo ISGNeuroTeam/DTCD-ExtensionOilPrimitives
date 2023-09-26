@@ -52,6 +52,17 @@ export default class OilWell {
       IsSource: createProp(`true`),
       IsOutlet: createProp(),
       _pp_tag: createProp(),
+      column_diameter_cond_mm: createProp(),
+      perf_absMark: createProp(),
+      nkt_diameter_mm: createProp(),
+      nkt_length_m: createProp(),
+      avg_freq: createProp(),
+      max_freq: createProp(),
+      min_freq: createProp(),
+      work_time: createProp(),
+      stop_time: createProp(),
+      Pintk_min: createProp(),
+      Pintk_max: createProp(),
     };
 
     const initPorts = [
