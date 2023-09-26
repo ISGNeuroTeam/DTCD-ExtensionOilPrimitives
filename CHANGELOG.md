@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - some new props to OilWell primitive
+- some new props to OilWellVodazabornaya primitive
 
 ### Removed
 

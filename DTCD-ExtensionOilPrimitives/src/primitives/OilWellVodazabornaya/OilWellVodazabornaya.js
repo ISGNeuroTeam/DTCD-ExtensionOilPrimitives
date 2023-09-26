@@ -46,6 +46,11 @@ export default class OilWellVodazabornaya {
       predict_mode: createProp(),
       shtr_debit: createProp(),
       K_pump: createProp(),
+      column_diameter_cond_mm: createProp(),
+      perf_absMark: createProp(),
+      nkt_diameter_mm: createProp(),
+      nkt_length_m: createProp(),
+      Plastovoe_davlenie_atm: createProp(),
     };
 
     const initPorts = [
