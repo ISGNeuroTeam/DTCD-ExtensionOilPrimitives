@@ -15,7 +15,7 @@ export default class OilEdgeWhatif {
   #strokeColor = '#11E00D';
 
   constructor(yFiles) {
-    this.#yFiles = yFiles.default;
+    this.#yFiles = yFiles;
   }
 
   create() {

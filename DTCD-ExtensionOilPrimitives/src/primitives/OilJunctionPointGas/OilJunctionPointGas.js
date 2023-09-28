@@ -15,7 +15,7 @@ export default class OilJunctionPointGas {
   #size = [46, 46];
 
   constructor(yFiles) {
-    this.#yFiles = yFiles.default;
+    this.#yFiles = yFiles;
   }
 
   create() {

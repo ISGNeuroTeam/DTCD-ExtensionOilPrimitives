@@ -15,7 +15,7 @@ export default class OilEdgeReagent {
   #strokeColor = '#E613DD';
 
   constructor(yFiles) {
-    this.#yFiles = yFiles.default;
+    this.#yFiles = yFiles;
   }
 
   create() {

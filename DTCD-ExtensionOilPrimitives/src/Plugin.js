@@ -22,7 +22,7 @@ export class ExtensionOilPrimitives extends ExtensionPlugin {
   constructor() {
     super();
 
-    const yFiles = this.getDependence('yFiles');
+    const yFiles = this.getDependence('yfiles', 'esm', '2.5.0');
 
     primitives.forEach(PrimitiveClass => {
       const { name } = PrimitiveClass.getPrimitiveInfo();

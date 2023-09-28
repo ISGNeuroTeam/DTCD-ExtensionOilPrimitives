@@ -15,7 +15,7 @@ export default class OilEdgeWater {
   #strokeColor = '#0099FF';
 
   constructor(yFiles) {
-    this.#yFiles = yFiles.default;
+    this.#yFiles = yFiles;
   }
 
   create() {

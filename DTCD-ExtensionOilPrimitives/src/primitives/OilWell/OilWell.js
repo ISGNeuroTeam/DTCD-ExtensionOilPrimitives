@@ -15,7 +15,7 @@ export default class OilWell {
   #size = [80, 148];
 
   constructor(yFiles) {
-    this.#yFiles = yFiles.default;
+    this.#yFiles = yFiles;
   }
 
   create() {

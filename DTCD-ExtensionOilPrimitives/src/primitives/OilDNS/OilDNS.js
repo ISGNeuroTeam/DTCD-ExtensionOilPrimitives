@@ -15,7 +15,7 @@ export default class OilDNS {
   #size = [148, 148];
 
   constructor(yFiles) {
-    this.#yFiles = yFiles.default;
+    this.#yFiles = yFiles;
   }
 
   create() {

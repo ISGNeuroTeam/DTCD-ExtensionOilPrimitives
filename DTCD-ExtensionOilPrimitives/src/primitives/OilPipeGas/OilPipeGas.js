@@ -15,7 +15,7 @@ export default class OilPipeGas {
   #size = [80, 80];
 
   constructor(yFiles) {
-    this.#yFiles = yFiles.default;
+    this.#yFiles = yFiles;
   }
 
   create() {

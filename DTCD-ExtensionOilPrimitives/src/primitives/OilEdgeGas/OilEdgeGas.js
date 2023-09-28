@@ -15,7 +15,7 @@ export default class OilEdgeGas {
   #strokeColor = '#FFD200';
 
   constructor(yFiles) {
-    this.#yFiles = yFiles.default;
+    this.#yFiles = yFiles;
   }
 
   create() {
