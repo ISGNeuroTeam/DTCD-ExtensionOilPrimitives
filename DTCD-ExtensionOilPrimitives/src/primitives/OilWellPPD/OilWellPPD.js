@@ -1,5 +1,5 @@
 import icon from './icon.svg';
-import createProp from '../../utils/createProp';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
 
 export default class OilWellPPD {
   static getPrimitiveInfo() {
@@ -26,26 +26,29 @@ export default class OilWellPPD {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(`"injection_well"`),
-      res_P: createProp(),
-      res_T: createProp(),
-      res_Q_m3_day: createProp(),
-      Q: createProp(),
-      choke_diam: createProp(),
-      padNum: createProp(),
-      wellNum: createProp(),
-      altitude: createProp(),
-      zakachka: createProp(),
-      node_name: createProp(),
-      node_id: createProp(),
-      Kind: createProp(`"Q"`),
-      Value: createProp("this.zakachka * 1000 / 86400"),
-      P: createProp(),
-      T: createProp(),
-      Q_m3_day: createProp(),
-      IsSource: createProp(),
-      IsOutlet: createProp(),
-      _pp_tag: createProp(),
+      object_type: createNodeProperty({ expression: `"injection_well"`, title: 'Тип объекта' }),
+      res_P: createNodeProperty({ title: 'Расчетное давление, атм' }),
+      res_T: createNodeProperty({ title: 'Расчетная температура, ℃' }),
+      res_Q_m3_day: createNodeProperty({ title: 'Расчетный дебит, м3/сут' }),
+      Q: createNodeProperty({}),
+      choke_diam: createNodeProperty({ title: 'Диаметр штуцера, мм' }),
+      padNum: createNodeProperty({ title: 'Номер куста' }),
+      wellNum: createNodeProperty({ title: 'Номер скважины' }),
+      altitude: createNodeProperty({ title: 'Альтитуда, м' }),
+      zakachka: createNodeProperty({ title: 'Объем закачиваемой воды в ППД, м3/сут' }),
+      node_name: createNodeProperty({ title: 'Название ноды' }),
+      node_id: createNodeProperty({ title: 'ИД ноды' }),
+      Kind: createNodeProperty({ expression: `"Q"`, title: 'Тип граничного условия' }),
+      Value: createNodeProperty({
+        expression: "this.zakachka * 1000 / 86400",
+        title: 'Значение граничного условия',
+      }),
+      P: createNodeProperty({ title: 'Давление, атм' }),
+      T: createNodeProperty({ title: 'Температура, ℃' }),
+      Q_m3_day: createNodeProperty({ title: 'Дебит, м3/сут' }),
+      IsSource: createNodeProperty({ title: 'Является ли источником' }),
+      IsOutlet: createNodeProperty({ title: 'Является ли стоком' }),
+      _pp_tag: createNodeProperty({}),
     };
 
     const initPorts = [
@@ -54,7 +57,7 @@ export default class OilWellPPD {
         type: 'OUT',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
       {
@@ -62,7 +65,7 @@ export default class OilWellPPD {
         type: 'IN',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
     ];

@@ -1,5 +1,5 @@
 import icon from './icon.svg';
-import createProp from '../../utils/createProp';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
 
 export default class OilKNS {
   static getPrimitiveInfo() {
@@ -26,28 +26,35 @@ export default class OilKNS {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(`"kns"`),
-      Name: createProp(),
-      res_P: createProp(),
-      res_T: createProp(),
-      res_Q_m3_day: createProp(),
-      VolumeWater: createProp(),
-      node_name: createProp(),
-      node_id: createProp(),
-      Kind: createProp(`"P"`),
-      Value: createProp("117"),
-      P: createProp("100"),
-      T: createProp(),
-      Q_m3_day: createProp(),
-      income_separated_water_flow_m3_day: createProp(),
-      additional_income_water_flow_m3_day: createProp("0"),
-      total_value_kg_sec: createProp(),
-      _check: createProp(),
-      Pumps_Outlet_Pressure_atm: createProp("117"),
-      IsSource: createProp(),
-      IsOutlet: createProp("true"),
-      _pp_tag: createProp(),
-
+      object_type: createNodeProperty({ expression: `"kns"`, title: 'Тип объекта' }),
+      Name: createNodeProperty({ title: 'Название' }),
+      res_P: createNodeProperty({ title: 'Расчетное давление, атм' }),
+      res_T: createNodeProperty({ title: 'Расчетная температура, ℃' }),
+      res_Q_m3_day: createNodeProperty({ title: 'Расчетный дебит, м3/сут' }),
+      VolumeWater: createNodeProperty({ title: 'Обводненность, %' }),
+      node_name: createNodeProperty({ title: 'Название ноды' }),
+      node_id: createNodeProperty({ title: 'ИД ноды' }),
+      Kind: createNodeProperty({ expression: `"P"`, title: 'Тип граничного условия' }),
+      Value: createNodeProperty({ expression: "117", title: 'Значение граничного условия' }),
+      P: createNodeProperty({ expression: "100", title: 'Давление, атм' }),
+      T: createNodeProperty({ title: 'Температура, ℃' }),
+      Q_m3_day: createNodeProperty({ title: 'Дебит, м3/сут' }),
+      income_separated_water_flow_m3_day: createNodeProperty({
+        title: 'Объем сепарированной воды с ДНС, м3/сут',
+      }),
+      additional_income_water_flow_m3_day: createNodeProperty({
+        expression: '0',
+        title: 'Дополнительный объем  воды, м3/сут',
+      }),
+      total_value_kg_sec: createNodeProperty({ title: 'Общий поток, кг/сек' }),
+      _check: createNodeProperty({}),
+      Pumps_Outlet_Pressure_atm: createNodeProperty({
+        expression: "117",
+        title: 'Выходное давление на КНС, атм',
+      }),
+      IsSource: createNodeProperty({ title: 'Является ли источником' }),
+      IsOutlet: createNodeProperty({ expression: "true", title: 'Является ли стоком' }),
+      _pp_tag: createNodeProperty({}),
     };
 
     const initPorts = [
@@ -56,7 +63,7 @@ export default class OilKNS {
         type: 'OUT',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
       // {
@@ -64,7 +71,7 @@ export default class OilKNS {
       //   type: 'OUT',
       //   portPosition: { x: 0.75, y: 1 },
       //   properties: {
-      //     status: createProp(),
+      //     status: createNodeProperty({}),
       //   },
       // },
       {
@@ -72,7 +79,7 @@ export default class OilKNS {
         type: 'IN',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
     ];

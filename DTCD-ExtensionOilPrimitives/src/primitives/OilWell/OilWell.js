@@ -1,5 +1,5 @@
 import icon from './icon.svg';
-import createProp from '../../utils/createProp';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
 
 export default class OilWell {
   static getPrimitiveInfo() {
@@ -26,43 +26,46 @@ export default class OilWell {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(`"well"`),
-      Name: createProp(),
-      res_P: createProp(),
-      res_T: createProp(),
-      res_Q_m3_day: createProp(),
-      LiquidDebit: createProp(),
-      LiquidDensity: createProp(),
-      VolumeWater: createProp(),
-      perforation: createProp(),
-      pumpDepth: createProp(),
-      model: createProp(),
-      productivity: createProp(),
-      predict_mode: createProp(),
-      shtr_debit: createProp(),
-      K_pump: createProp(),
-      frequency: createProp(),
-      node_name: createProp(),
-      node_id: createProp(),
-      Kind: createProp(`"Q"`),
-      Value: createProp(`this.LiquidDebit * this.LiquidDensity / 86400`),
-      T: createProp(),
-      P: createProp(),
-      Q_m3_day: createProp(),
-      IsSource: createProp(`true`),
-      IsOutlet: createProp(),
-      _pp_tag: createProp(),
-      column_diameter_cond_mm: createProp(),
-      perf_absMark: createProp(),
-      nkt_diameter_mm: createProp(),
-      nkt_length_m: createProp(),
-      avg_freq: createProp(),
-      max_freq: createProp(),
-      min_freq: createProp(),
-      work_time: createProp(),
-      stop_time: createProp(),
-      Pintk_min: createProp(),
-      Pintk_max: createProp(),
+      object_type: createNodeProperty({ expression: `"well"`, title: 'Тип объекта' }),
+      Name: createNodeProperty({ title: 'Название' }),
+      res_P: createNodeProperty({ title: 'Расчетное давление, атм' }),
+      res_T: createNodeProperty({ title: 'Расчетная температура, ℃' }),
+      res_Q_m3_day: createNodeProperty({ title: 'Расчетный дебит, м3/сут' }),
+      LiquidDebit: createNodeProperty({ title: 'Дебит жидкости, м3/сут' }),
+      LiquidDensity: createNodeProperty({ title: 'Плотность жидкости, кг/м3' }),
+      VolumeWater: createNodeProperty({ title: 'Обводненность, %' }),
+      perforation: createNodeProperty({ title: 'Глубина перфорации, м' }),
+      pumpDepth: createNodeProperty({ title: 'Глубина насоса, м' }),
+      model: createNodeProperty({ title: 'Модель насоса' }),
+      productivity: createNodeProperty({ title: 'Продуктивность, м3/сут/атм' }),
+      predict_mode: createNodeProperty({ title: 'Режим работы' }),
+      shtr_debit: createNodeProperty({ title: 'Дебит ШТР, м3/сут' }),
+      K_pump: createNodeProperty({ title: 'Коэфф. подачи насоса' }),
+      frequency: createNodeProperty({ title: 'Частота, Гц' }),
+      node_name: createNodeProperty({ title: 'Название ноды' }),
+      node_id: createNodeProperty({ title: 'ИД ноды' }),
+      Kind: createNodeProperty({ expression: `"Q"`, title: 'Тип граничного условия' }),
+      Value: createNodeProperty({
+        expression: `this.LiquidDebit * this.LiquidDensity / 86400`,
+        title: 'Значение граничного условия',
+      }),
+      T: createNodeProperty({ title: 'Температура, ℃' }),
+      P: createNodeProperty({ title: 'Давление, атм' }),
+      Q_m3_day: createNodeProperty({ title: 'Дебит, м3/сут' }),
+      IsSource: createNodeProperty({ expression: `true`, title: 'Является ли источником' }),
+      IsOutlet: createNodeProperty({ title: 'Является ли стоком' }),
+      _pp_tag: createNodeProperty({}),
+      column_diameter_cond_mm: createNodeProperty({}),
+      perf_absMark: createNodeProperty({}),
+      nkt_diameter_mm: createNodeProperty({}),
+      nkt_length_m: createNodeProperty({}),
+      avg_freq: createNodeProperty({}),
+      max_freq: createNodeProperty({}),
+      min_freq: createNodeProperty({}),
+      work_time: createNodeProperty({}),
+      stop_time: createNodeProperty({}),
+      Pintk_min: createNodeProperty({}),
+      Pintk_max: createNodeProperty({}),
     };
 
     const initPorts = [
@@ -71,7 +74,7 @@ export default class OilWell {
         type: 'OUT',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
       {
@@ -79,7 +82,7 @@ export default class OilWell {
         type: 'IN',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
     ];

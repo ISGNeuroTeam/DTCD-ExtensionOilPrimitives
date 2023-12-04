@@ -1,5 +1,5 @@
 import icon from './icon.svg';
-import createProp from '../../utils/createProp';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
 
 export default class OilPipe {
   static getPrimitiveInfo() {
@@ -26,19 +26,19 @@ export default class OilPipe {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(`"pipe"`),
-      Name: createProp(),
-      res_mass_flow_kg_sec: createProp(),
-      res_velocity_m_sec: createProp(),
-      L: createProp(),
-      d: createProp(),
-      s: createProp(),
-      uphillM: createProp(),
-      effectiveD: createProp(),
-      intD: createProp(),
-      node_id_start: createProp(),
-      node_id_end: createProp(),
-      _pp_tag: createProp(),
+      object_type: createNodeProperty({ expression: `"pipe"`, title: 'Тип объекта' }),
+      Name: createNodeProperty({ title: 'Название' }),
+      res_mass_flow_kg_sec: createNodeProperty({ title: 'Расчетный массовый поток, кг/сек' }),
+      res_velocity_m_sec: createNodeProperty({ title: 'Расчетная скорость потока, м/сек' }),
+      L: createNodeProperty({ title: 'Длина трубы, м' }),
+      d: createNodeProperty({ title: 'Внешний диаметр трубы, мм' }),
+      s: createNodeProperty({ title: 'Толщина стенки трубы, мм' }),
+      uphillM: createNodeProperty({ title: 'Уклон трубы, м (положительное, если конец выше начала)' }),
+      effectiveD: createNodeProperty({ title: 'Эффективный диаметр, мм' }),
+      intD: createNodeProperty({ title: 'Внешний диаметр трубы, м' }),
+      node_id_start: createNodeProperty({ title: 'ИД ноды старта (для ребра-трубы)' }),
+      node_id_end: createNodeProperty({ title: 'ИД ноды конца (для ребра-трубы)' }),
+      _pp_tag: createNodeProperty({}),
     };
 
     const initPorts = [
@@ -47,7 +47,7 @@ export default class OilPipe {
         type: 'OUT',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
       {
@@ -55,7 +55,7 @@ export default class OilPipe {
         type: 'IN',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
     ];

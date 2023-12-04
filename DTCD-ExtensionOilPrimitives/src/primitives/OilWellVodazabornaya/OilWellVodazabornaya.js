@@ -1,5 +1,5 @@
 import icon from './icon.svg';
-import createProp from '../../utils/createProp';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
 
 export default class OilWellVodazabornaya {
   static getPrimitiveInfo() {
@@ -26,31 +26,31 @@ export default class OilWellVodazabornaya {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(),
-      T: createProp(),
-      P: createProp(),
-      Q_m3_day: createProp(),
-      query_res: createProp(),
-      Name: createProp(),
-      node_name: createProp(),
-      node_id: createProp(),
-      Kind: createProp(),
-      Value: createProp(),
-      IsSource: createProp(),
-      VolumeWater: createProp(),
-      perforation: createProp(),
-      pumpDepth: createProp(),
-      model: createProp(),
-      frequency: createProp(),
-      productivity: createProp(),
-      predict_mode: createProp(),
-      shtr_debit: createProp(),
-      K_pump: createProp(),
-      column_diameter_cond_mm: createProp(),
-      perf_absMark: createProp(),
-      nkt_diameter_mm: createProp(),
-      nkt_length_m: createProp(),
-      Plastovoe_davlenie_atm: createProp(),
+      object_type: createNodeProperty({ title: 'Тип объекта' }),
+      T: createNodeProperty({ title: 'Температура, ℃' }),
+      P: createNodeProperty({ title: 'Давление, атм' }),
+      Q_m3_day: createNodeProperty({ title: 'Дебит, м3/сут' }),
+      // query_res: createNodeProperty({}),
+      Name: createNodeProperty({ title: 'Название' }),
+      node_name: createNodeProperty({ title: 'Название ноды' }),
+      node_id: createNodeProperty({ title: 'ИД ноды' }),
+      Kind: createNodeProperty({ title: 'Тип граничного условия' }),
+      Value: createNodeProperty({ title: 'Значение граничного условия' }),
+      IsSource: createNodeProperty({ title: 'Является ли источником' }),
+      VolumeWater: createNodeProperty({ title: 'Обводненность, %' }),
+      perforation: createNodeProperty({ title: 'Глубина перфорации, м' }),
+      pumpDepth: createNodeProperty({ title: 'Глубина насоса, м' }),
+      model: createNodeProperty({ title: 'Модель насоса' }),
+      frequency: createNodeProperty({ title: 'Частота, Гц' }),
+      productivity: createNodeProperty({ title: 'Продуктивность, м3/сут/атм' }),
+      predict_mode: createNodeProperty({ title: 'Режим работы' }),
+      shtr_debit: createNodeProperty({ title: 'Дебит ШТР, м3/сут' }),
+      K_pump: createNodeProperty({ title: 'Коэфф. подачи насоса' }),
+      column_diameter_cond_mm: createNodeProperty({}),
+      perf_absMark: createNodeProperty({}),
+      nkt_diameter_mm: createNodeProperty({}),
+      nkt_length_m: createNodeProperty({}),
+      Plastovoe_davlenie_atm: createNodeProperty({ title: 'Пластовое давление, атм' }),
     };
 
     const initPorts = [
@@ -59,7 +59,7 @@ export default class OilWellVodazabornaya {
         type: 'OUT',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
       {
@@ -67,7 +67,7 @@ export default class OilWellVodazabornaya {
         type: 'IN',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
     ];

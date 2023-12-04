@@ -1,5 +1,5 @@
 import icon from './icon.svg';
-import createProp from '../../utils/createProp';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
 
 export default class OilVrb {
   static getPrimitiveInfo() {
@@ -26,20 +26,20 @@ export default class OilVrb {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(`"pad"`),
-      Name: createProp(),
-      res_P: createProp(),
-      res_T: createProp(),
-      node_name: createProp(),
-      node_id: createProp(),
-      Kind: createProp(),
-      Value: createProp(),
-      altitude: createProp(),
-      P: createProp(),
-      T: createProp(),
-      IsSource: createProp(),
-      IsOutlet: createProp(),
-      _pp_tag: createProp(),
+      object_type: createNodeProperty({ expression: `"pad"`, title: 'Тип объекта' }),
+      Name: createNodeProperty({ title: 'Название' }),
+      res_P: createNodeProperty({ title: 'Расчетное давление, атм' }),
+      res_T: createNodeProperty({ title: 'Расчетная температура, ℃' }),
+      node_name: createNodeProperty({ title: 'Название ноды' }),
+      node_id: createNodeProperty({ title: 'ИД ноды' }),
+      Kind: createNodeProperty({ title: 'Тип граничного условия' }),
+      Value: createNodeProperty({ title: 'Значение граничного условия' }),
+      altitude: createNodeProperty({ title: 'Альтитуда, м' }),
+      P: createNodeProperty({ title: 'Давление, атм' }),
+      T: createNodeProperty({ title: 'Температура, ℃' }),
+      IsSource: createNodeProperty({ title: 'Является ли источником' }),
+      IsOutlet: createNodeProperty({ title: 'Является ли стоком' }),
+      _pp_tag: createNodeProperty({}),
     };
 
     const initPorts = [
@@ -48,7 +48,7 @@ export default class OilVrb {
         type: 'OUT',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
       // {
@@ -56,7 +56,7 @@ export default class OilVrb {
       //   type: 'OUT',
       //   portPosition: { x: 0.75, y: 1 },
       //   properties: {
-      //     status: createProp(),
+      //     status: createNodeProperty({}),
       //   },
       // },
       {
@@ -64,7 +64,7 @@ export default class OilVrb {
         type: 'IN',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
     ];

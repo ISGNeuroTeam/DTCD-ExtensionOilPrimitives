@@ -1,5 +1,5 @@
 import icon from './icon.svg';
-import createProp from '../../utils/createProp';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
 
 export default class OilPipeGas {
   static getPrimitiveInfo() {
@@ -26,16 +26,16 @@ export default class OilPipeGas {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(),
-      Name: createProp(),
-      L: createProp(),
-      d: createProp(),
-      s: createProp(),
-      uphillM: createProp(),
-      effectiveD: createProp(),
-      intD: createProp(),
-      node_id_start: createProp(),
-      node_id_end: createProp(),
+      object_type: createNodeProperty({ title: 'Тип объекта' }),
+      Name: createNodeProperty({ title: 'Название' }),
+      L: createNodeProperty({ title: 'Длина трубы, м' }),
+      d: createNodeProperty({ title: 'Внешний диаметр трубы, мм' }),
+      s: createNodeProperty({ title: 'Толщина стенки трубы, мм' }),
+      uphillM: createNodeProperty({ title: 'Уклон трубы, м (положительное, если конец выше начала)' }),
+      effectiveD: createNodeProperty({ title: 'Эффективный диаметр, мм' }),
+      intD: createNodeProperty({ title: 'Внешний диаметр трубы, м' }),
+      node_id_start: createNodeProperty({ title: 'ИД ноды старта (для ребра-трубы)' }),
+      node_id_end: createNodeProperty({ title: 'ИД ноды конца (для ребра-трубы)' }),
     };
 
     const initPorts = [
@@ -44,7 +44,7 @@ export default class OilPipeGas {
         type: 'OUT',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
       {
@@ -52,7 +52,7 @@ export default class OilPipeGas {
         type: 'IN',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
     ];

@@ -1,5 +1,5 @@
 import icon from './icon.svg';
-import createProp from '../../utils/createProp';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
 
 export default class OilJunctionPoint {
   static getPrimitiveInfo() {
@@ -26,20 +26,20 @@ export default class OilJunctionPoint {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(`"junctionpoint"`),
-      Name: createProp(),
-      res_P: createProp(),
-      res_T: createProp(),
-      VolumeWater: createProp(),
-      node_name: createProp(),
-      node_id: createProp(),
-      Kind: createProp(),
-      Value: createProp(),
-      P: createProp(),
-      T: createProp(),
-      IsSource: createProp(),
-      IsOutlet: createProp(),
-      _pp_tag: createProp(),
+      object_type: createNodeProperty({ expression: `"junctionpoint"`, title: 'Тип объекта' }),
+      Name: createNodeProperty({ title: 'Название' }),
+      res_P: createNodeProperty({ title: 'Расчетное давление, атм' }),
+      res_T: createNodeProperty({ title: 'Расчетная температура, ℃' }),
+      VolumeWater: createNodeProperty({ title: 'Обводненность, %' }),
+      node_name: createNodeProperty({ title: 'Название ноды' }),
+      node_id: createNodeProperty({ title: 'ИД ноды' }),
+      Kind: createNodeProperty({ title: 'Тип граничного условия' }),
+      Value: createNodeProperty({ title: 'Значение граничного условия' }),
+      P: createNodeProperty({ title: 'Давление, атм' }),
+      T: createNodeProperty({ title: 'Температура, ℃' }),
+      IsSource: createNodeProperty({ title: 'Является ли источником' }),
+      IsOutlet: createNodeProperty({ title: 'Является ли стоком' }),
+      _pp_tag: createNodeProperty({}),
     };
 
     const initPorts = [
@@ -48,7 +48,7 @@ export default class OilJunctionPoint {
         type: 'OUT',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
       // {
@@ -56,7 +56,7 @@ export default class OilJunctionPoint {
       //   type: 'OUT',
       //   portPosition: { x: 0.75, y: 1 },
       //   properties: {
-      //     status: createProp(),
+      //     status: createNodeProperty({}),
       //   },
       // },
       {
@@ -64,7 +64,7 @@ export default class OilJunctionPoint {
         type: 'IN',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
     ];

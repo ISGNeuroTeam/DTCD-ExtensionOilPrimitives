@@ -1,5 +1,5 @@
 import icon from './icon.svg';
-import createProp from '../../utils/createProp';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
 
 export default class OilDNS {
   static getPrimitiveInfo() {
@@ -26,28 +26,40 @@ export default class OilDNS {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(`"dns"`),
-      Name: createProp(),
-      res_P: createProp(),
-      res_T: createProp(),
-      res_Q_m3_day: createProp(),
-      VolumeWater: createProp(),
-      node_name: createProp(),
-      node_id: createProp(),
-      Kind: createProp(`"P"`),
-      Value: createProp("7"),
-      P: createProp("100"),
-      T: createProp(),
-      Q_m3_day: createProp(),
-      gas_factor_m3_m3: createProp("39"),
-      separated_water_flow_m3_day: createProp("this.res_Q_m3_day * this.res_watercut_percent / 100"),
-      production_oil_flow_m3_day: createProp("this.res_Q_m3_day - this.separated_water_flow_m3_day"),
-      separated_gas_flow_m3_day: createProp("this.production_oil_flow_m3_day * this.gas_factor_m3_m3"),
-      res_watercut_percent: createProp(),
-      Inlet_Pressure_atm: createProp(),
-      IsSource: createProp(),
-      IsOutlet: createProp("true"),
-      _pp_tag: createProp(),
+      object_type: createNodeProperty({ expression: `"dns"`, title: 'Тип объекта' }),
+      Name: createNodeProperty({ title: 'Название' }),
+      res_P: createNodeProperty({ title: 'Расчетное давление, атм' }),
+      res_T: createNodeProperty({ title: 'Расчетная температура, ℃' }),
+      res_Q_m3_day: createNodeProperty({ title: 'Расчетный дебит, м3/сут' }),
+      VolumeWater: createNodeProperty({ title: 'Обводненность, %' }),
+      node_name: createNodeProperty({ title: 'Название ноды' }),
+      node_id: createNodeProperty({ title: 'ИД ноды' }),
+      Kind: createNodeProperty({ expression: `"P"`, title: 'Тип граничного условия' }),
+      Value: createNodeProperty({ expression: "7", title: 'Значение граничного условия' }),
+      P: createNodeProperty({ expression: "100", title: 'Давление, атм' }),
+      T: createNodeProperty({ title: 'Температура, ℃' }),
+      Q_m3_day: createNodeProperty({ title: 'Дебит, м3/сут' }),
+      gas_factor_m3_m3: createNodeProperty({
+        expression: "39",
+        title: 'Газовый фактор, м3/м3',
+      }),
+      separated_water_flow_m3_day: createNodeProperty({
+        expression: "this.res_Q_m3_day * this.res_watercut_percent / 100",
+        title: 'Объем сепарированной воды на ДНС, м3/сут',
+      }),
+      production_oil_flow_m3_day: createNodeProperty({
+        expression: "this.res_Q_m3_day - this.separated_water_flow_m3_day",
+        title: 'Объем очищенной нефти на ДНС, м3/сут',
+      }),
+      separated_gas_flow_m3_day: createNodeProperty({
+        expression: "this.production_oil_flow_m3_day * this.gas_factor_m3_m3",
+        title: 'Объем сепарированного газа на ДНС, м3/сут',
+      }),
+      res_watercut_percent: createNodeProperty({ title: 'Расчетная обводненность %' }),
+      Inlet_Pressure_atm: createNodeProperty({ title: 'Входное давление, атм' }),
+      IsSource: createNodeProperty({ title: 'Является ли источником' }),
+      IsOutlet: createNodeProperty({ expression: "true", title: 'Является ли стоком' }),
+      _pp_tag: createNodeProperty({}),
     };
 
     const initPorts = [
@@ -56,7 +68,7 @@ export default class OilDNS {
         type: 'OUT',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
       // {
@@ -64,7 +76,7 @@ export default class OilDNS {
       //   type: 'OUT',
       //   portPosition: { x: 0.75, y: 1 },
       //   properties: {
-      //     status: createProp(),
+      //     status: createNodeProperty({}),
       //   },
       // },
       {
@@ -72,7 +84,7 @@ export default class OilDNS {
         type: 'IN',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
     ];

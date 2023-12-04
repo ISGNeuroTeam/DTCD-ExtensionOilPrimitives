@@ -1,5 +1,5 @@
 import icon from './icon.svg';
-import createProp from '../../utils/createProp';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
 
 export default class OilJunctionPointRaw {
   static getPrimitiveInfo() {
@@ -26,16 +26,16 @@ export default class OilJunctionPointRaw {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(),
-      Name: createProp(),
-      node_name: createProp(),
-      node_id: createProp(),
-      Kind: createProp(),
-      Value: createProp(),
-      T: createProp(),
-      IsSource: createProp(),
-      VolumeWater: createProp(),
-      IsOutlet: createProp(),
+      object_type: createNodeProperty({ title: 'Тип объекта' }),
+      Name: createNodeProperty({ title: 'Название' }),
+      node_name: createNodeProperty({ title: 'Название ноды' }),
+      node_id: createNodeProperty({ title: 'ИД ноды' }),
+      Kind: createNodeProperty({ title: 'Тип граничного условия' }),
+      Value: createNodeProperty({ title: 'Значение граничного условия' }),
+      T: createNodeProperty({ title: 'Температура, ℃' }),
+      IsSource: createNodeProperty({ title: 'Является ли источником' }),
+      VolumeWater: createNodeProperty({ title: 'Обводненность, %' }),
+      IsOutlet: createNodeProperty({ title: 'Является ли стоком' }),
     };
 
     const initPorts = [
@@ -44,7 +44,7 @@ export default class OilJunctionPointRaw {
         type: ['IN', 'OUT'],
         portPosition: { x: 0.5, y: 0.5 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
     ];

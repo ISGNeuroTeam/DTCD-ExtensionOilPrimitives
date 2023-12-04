@@ -1,5 +1,5 @@
 import icon from './icon.svg';
-import createProp from '../../utils/createProp';
+import createNodeProperty from './../../../../DTCD-SDK/utils/createNodeProperty';
 
 export default class OilBlock {
   static getPrimitiveInfo() {
@@ -26,13 +26,13 @@ export default class OilBlock {
     instance.style = new ImageNodeStyle(icon);
 
     const properties = {
-      object_type: createProp(),
-      Name: createProp(),
-      node_name: createProp(),
-      node_id: createProp(),
-      Kind: createProp(),
-      Value: createProp(),
-      IsOutlet: createProp(),
+      object_type: createNodeProperty({ title: 'Тип объекта' }),
+      Name: createNodeProperty({ title: 'Название' }),
+      node_name: createNodeProperty({ title: 'Название ноды' }),
+      node_id: createNodeProperty({ title: 'ИД ноды' }),
+      Kind: createNodeProperty({ title: 'Тип граничного условия' }),
+      Value: createNodeProperty({ title: 'Значение граничного условия' }),
+      IsOutlet: createNodeProperty({ title: 'Является ли стоком' }),
     };
 
     const initPorts = [
@@ -41,7 +41,7 @@ export default class OilBlock {
         type: 'OUT',
         portPosition: { x: 0.5, y: 1 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
       {
@@ -49,7 +49,7 @@ export default class OilBlock {
         type: 'OUT',
         portPosition: { x: 0.75, y: 1 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
       {
@@ -57,7 +57,7 @@ export default class OilBlock {
         type: 'IN',
         portPosition: { x: 0.5, y: 0 },
         properties: {
-          status: createProp(),
+          status: createNodeProperty({}),
         },
       },
     ];
