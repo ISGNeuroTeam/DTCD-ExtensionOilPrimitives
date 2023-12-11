@@ -34,7 +34,7 @@ export default class OilPipePPD {
       d: createNodeProperty({ title: 'Внешний диаметр трубы, мм' }),
       s: createNodeProperty({ title: 'Толщина стенки трубы, мм' }),
       effectiveD: createNodeProperty({ title: 'Эффективный диаметр, мм' }),
-      intD: createNodeProperty({ title: 'Внешний диаметр трубы, м' }),
+      intD: createNodeProperty({ title: 'Внутренний диаметр трубы, м' }),
       node_id_start: createNodeProperty({ title: 'ИД ноды старта (для ребра-трубы)' }),
       node_id_end: createNodeProperty({ title: 'ИД ноды конца (для ребра-трубы)' }),
       _pp_tag: createNodeProperty({}),

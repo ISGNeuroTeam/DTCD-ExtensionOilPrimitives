@@ -33,7 +33,7 @@ export default class OilPipeWhatif {
       s: createNodeProperty({ title: 'Толщина стенки трубы, мм' }),
       uphillM: createNodeProperty({ title: 'Уклон трубы, м (положительное, если конец выше начала)' }),
       effectiveD: createNodeProperty({ title: 'Эффективный диаметр, мм' }),
-      intD: createNodeProperty({ title: 'Внешний диаметр трубы, м' }),
+      intD: createNodeProperty({ title: 'Внутренний диаметр трубы, м' }),
       node_id_start: createNodeProperty({ title: 'ИД ноды старта (для ребра-трубы)' }),
       node_id_end: createNodeProperty({ title: 'ИД ноды конца (для ребра-трубы)' }),
     };
